@@ -1,0 +1,600 @@
+﻿<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>첼시</title>
+    	<style>
+
+		#container {
+			width:960px;
+			margin:0 auto;
+			background-color: rgba(209, 209, 209, 0.452);
+		}
+
+		#title {
+			background-color: rgb(58, 107, 211);
+			color:rgb(255, 255, 255); 
+			height: 120px; 
+			width: 100%;
+			font-size: 50px;
+			padding-top: 30px;
+			padding-left: 10px;
+			font-family: 'HY견고딕';
+			margin-bottom: 100px;;
+		}
+
+		#minititle {
+			color: white;
+			font-size: 15px;
+			padding-left: 8px;
+			font-family: '굴림체';
+			font-weight: bold;
+		}
+
+		#mainlogo {
+			width: 150px;
+			float:right;
+		}
+
+		#contents {
+			width: 800px;  
+			padding: 20px;  
+			margin-bottom: 20px;  
+		
+		}
+
+		#sidebar {
+			width: 130px;  
+			padding-right: 15px;
+			background:rgb(58, 107, 211);
+            margin-right: 50px;
+			position: fixed;
+			top: 220px;
+			right:0px;
+		}
+		
+		.sidemenu {
+			color: rgb(255, 255, 255);
+		}
+
+		.subtitle {
+			color: rgb(58, 107, 211);
+			font-size: 30px;
+			font-weight: bold;
+			padding-bottom: 50px;
+		}
+
+		hr {
+			color: rgb(58, 107, 211);
+			border: thin solid;
+			margin-bottom: 100px;
+			margin-top: 100px;
+		}
+
+		#managerpicture {
+			width: 300px;
+			clear: both;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		#epllogo {
+			height: 45.4px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top:30px;
+		}
+
+		#managername {
+			height: 40px;
+			background-color: rgb(69, 8, 75);
+			color: white;
+			margin-bottom: 100px;
+			text-align: center;
+			margin-left: 250px;
+			margin-right: 250px;
+			font-size: 23px;
+			padding-top: 12px;
+			font-family: 'HY견고딕';
+		}
+
+		.firsttable {
+    		width: 100%;
+  			border-top: 1px solid rgb(69, 8, 75);
+    		border-collapse: collapse;
+
+  		}
+
+  		#firstthtd {
+    		border-bottom: 1px solid rgb(69, 8, 75);
+    		padding: 10px;
+			text-align: center;
+  		}
+
+		.charttitle {
+			font-size: 20px;
+			font-style: italic;
+			color: rgb(69, 8, 75);
+		}
+
+		.ranking {
+			font-size: 15px;
+			font-family: 'hy견고딕';
+			font-style: italic;
+			color: rgb(69, 8, 75);
+		}
+
+		.point {
+			font-size: 15px;
+			font-family: 'hy견고딕';
+			font-style: italic;
+		}
+
+		.win {
+			font-size: 15px;
+			font-family: 'hy견고딕';
+			font-style: italic;
+		}
+
+		.draw {
+			font-size: 15px;
+			font-family: 'hy견고딕';
+			font-style: italic;
+		}
+
+		.lose {
+			font-size: 15px;
+			font-family: 'hy견고딕';
+			font-style: italic;
+		}
+
+		.firstline {
+			background-color: springgreen;
+		}
+
+	
+  		#secondtable {
+			width: 100%;
+  			border-top: 3px solid white;
+    		border-collapse: collapse;
+			text-align: center;
+			padding: 10px;
+ 	 	}
+
+  		#secondthtd {
+    		border-bottom: 3px solid white;
+    		padding: 10px;
+			text-align: center;
+  		}
+		
+		.tournament {
+			background-color: rgb(89, 255, 227);
+			color: rgb(69, 8, 75);
+			font-family: 'HY견고딕';
+		}
+
+		.team1 {
+			background-color:rgb(69, 8, 75);
+			color: white;
+			font-family: 'HY견고딕';
+		}
+
+		.finalwin {
+			background-color: springgreen;
+			color: rgb(69, 8, 75);
+			font-family: 'HY견고딕';
+		}
+
+		.finallose {
+			background-color: rgb(255, 101, 147);
+			color: rgb(69, 8, 75);
+			font-family: 'HY견고딕';
+		}
+
+        .finaldraw {
+			background-color: rgb(172, 172, 172);
+			color: rgb(69, 8, 75);
+			font-family: 'HY견고딕';
+		}
+
+		.forward {
+			background-color: springgreen;
+			color: rgb(69, 8, 75);
+			font-size: 20px;
+			font-family: 'HY견고딕';
+			height: 30px;
+			text-align: center;
+			margin-right: 730px;
+			padding-top: 5px;
+			margin-top: 50px;
+		}
+
+		.midfielder {
+			background-color: springgreen;
+			color: rgb(69, 8, 75);
+			font-size: 20px;
+			font-family: 'HY견고딕';
+			height: 30px;
+			text-align: center;
+			margin-right: 710px;
+			padding-top: 5px;
+			margin-top: 50px;
+		}
+
+		.defender {
+			background-color: springgreen;
+			color: rgb(69, 8, 75);
+			font-size: 20px;
+			font-family: 'HY견고딕';
+			height: 30px;
+			text-align: center;
+			margin-right: 730px;
+			padding-top: 5px;
+			margin-top: 50px;
+		}
+
+		.gk {
+			background-color: springgreen;
+			color: rgb(69, 8, 75);
+			font-size: 20px;
+			font-family: 'HY견고딕';
+			height: 30px;
+			text-align: center;
+			margin-right: 730px;
+			padding-top: 5px;
+			margin-top: 50px;
+		}
+		
+		.player1 {
+			height: 160px;
+			margin-left: 30px;
+		}
+
+		.player2 {
+			height: 160px;
+			margin-left: 45px;
+		}
+
+		.player3 {
+			height: 160px;
+			margin-left: 10px;
+		}
+
+		.player4 {
+			height: 160px;
+			margin-left: 40px;
+		}
+
+		.player5 {
+			height: 160px;
+			margin-left: 15px;
+		}
+
+		.player6 {
+			height: 160px;
+			margin-left: -3px;
+		}
+
+		.player7 {
+			height: 160px;
+			margin-left: 35px;
+		}
+
+		.player8 {
+			height: 160px;
+			margin-left: 28px;
+		}
+
+		.player9 {
+			height: 160px;
+			margin-left: 12px;
+		}
+
+		.player10 {
+			height: 160px;
+			margin-left: 27px;
+		}
+
+		.player11 {
+			height: 160px;
+			margin-left: 40px;
+		}
+
+		.forwardplayername {
+			background-color: rgb(69, 8, 75);
+			color: white;
+			height: 30px;
+			font-size: 20px;
+			text-align: center;
+			margin-left: 18px;
+			padding: 8px;
+			font-family: 'hy견고딕';
+			width: 30px;
+		}
+	
+		a {
+			text-decoration: none;
+		}
+		
+		a:link {
+			text-decoration: none; color: rgb(58, 107, 211);
+			}
+
+		a:visited {
+			text-decoration: none; color: rgb(58, 107, 211);
+		}
+
+	</style>
+
+</head>
+
+<body>
+	<header id="header">
+
+		<img id="mainlogo" src="첼시_FC_로고.png">
+
+		<div id="title">
+
+			첼시
+			
+			<p id="minititle">
+
+				프리미어리그 4위
+
+			</p>
+
+		</div>
+
+	</header>
+
+		<aside id="sidebar">
+			
+            <ul>
+				<p><li class="sidemenu"><div id="top1"><a href="#bottom1" style="color:rgb(255, 255, 255);">감독</li></p></a></div>
+				<p><li class="sidemenu"><div id="top2"><a href="#bottom2" style="color:rgb(255, 255, 255);">순위표</li></p></a></div>
+				<p><li class="sidemenu"><div id="top3"><a href="#bottom3" style="color:rgb(255, 255, 255);">중단 직전 10경기 성적</li></p></a></div>
+				<p><li class="sidemenu"><div id="top4"><a href="#bottom4" style="color:rgb(255, 255, 255);">BEST 11</li></p></a></div>
+			</ul>
+
+		</aside>
+
+	<div id="container">
+	
+	<main id="contents">
+				
+		<div class="subtitle"><div id="bottom1"><a href="#top1">
+			# 감독
+		</div></div></a>
+
+			<img id="epllogo" src="프리미어리그_형광1.jpg">
+
+			<img id="managerpicture" src="프랭크_램파드.png">
+
+			<div id="managername">
+				프랭크 램파드
+			</div>
+			
+			<hr>
+
+		<div class="subtitle"><div id="bottom2"><a href="#top2">
+			# 순위표
+		</div></div></a>
+		   
+			<table class="firsttable">
+					
+				<tr>
+					<th id="firstthtd" class="charttitle">순위</th>
+					<th id="firstthtd" class="charttitle">팀</th>
+					<th id="firstthtd" class="charttitle">승점</th>
+					<th id="firstthtd" class="charttitle">승</th>
+					<th id="firstthtd" class="charttitle">무</th>
+					<th id="firstthtd" class="charttitle">패</th>
+				</tr>
+				
+				<tr>
+					<td id="firstthtd" class="ranking">1</td>
+					<td id="firstthtd" class="logo"><img width="20px;"src="리버풀_FC_로고.png"></td>
+					<td id="firstthtd" class="point">82점</td>
+					<td id="firstthtd" class="win">27</td>
+					<td id="firstthtd" class="draw">1</td>
+					<td id="firstthtd"  class="lose">1</td>
+				</tr>
+
+				<tr>
+					<td id="firstthtd" class="ranking">2</td>
+					<td id="firstthtd" class="logo"><img width="22px;"src="맨체스터_시티_FC_로고.png"></td>
+					<td id="firstthtd" class="point">60점</td>
+					<td id="firstthtd" class="win">19</td>
+					<td id="firstthtd" class="draw">3</td>
+					<td id="firstthtd" class="lose">7</td>
+				</tr>
+					
+				<tr>
+					<td id="firstthtd" class="ranking">3</td>
+					<td id="firstthtd" class="logo"><img width="22px;"src="레스터_시티_FC_로고.png"></td>
+					<td id="firstthtd" class="point">53점</td>
+					<td id="firstthtd" class="win">16</td>
+					<td id="firstthtd" class="draw">5</td>
+					<td id="firstthtd" class="lose">8</td>
+				</tr>
+					
+				<tr class="firstline">
+					<td id="firstthtd" class="ranking">4</td>
+					<td id="firstthtd" class="logo"><img width="22px;"src="첼시_FC_로고.png"></td>
+					<td id="firstthtd" class="point">48점</td>
+					<td id="firstthtd" class="win">14</td>
+					<td id="firstthtd" class="draw">6</td>
+					<td id="firstthtd" class="lose">9</td>
+				</tr>
+
+				<tr>
+					<td id="firstthtd" class="ranking">5</td>
+					<td id="firstthtd" class="logo"><img width="22px;"src="맨체스터_유나이티드_FC_로고.png"></td>
+					<td id="firstthtd" class="point">45점</td>
+					<td id="firstthtd" class="win">12</td>
+					<td id="firstthtd" class="draw">9</td>
+					<td id="firstthtd" class="lose">8</td>
+				</tr>
+
+			</table>
+
+			<hr>
+		
+			<div class="subtitle"><div id="bottom3"><a href="#top3">
+				# 중단 직전 10경기 성적
+			</div></div></a>
+
+			<table id="secondtable">
+
+				<tr>
+					<td id="secondthtd" class="tournament">PL</td>
+					<td id="secondthtd" class="team1">뉴캐슬</td>
+					<td id="secondthtd" class="finallose">1 : 0</td>
+					<td id="secondthtd" class="team1">첼시</td>
+				</tr>
+
+				<tr>
+					<td id="secondthtd" class="tournament">PL</td>
+					<td id="secondthtd" class="team1">첼시</td>
+					<td id="secondthtd" class="finaldraw">2 : 2</td>
+					<td id="secondthtd" class="team1">아스날</td>
+				</tr>
+
+				<tr>
+					<td id="secondthtd" class="tournament">FA컵</td>
+					<td id="secondthtd" class="team1">헐 시티</td>
+					<td id="secondthtd" class="finalwin">1 : 2</td>
+					<td id="secondthtd" class="team1">첼시</td>
+				</tr>
+
+				<tr>
+					<td id="secondthtd" class="tournament">PL</td>
+					<td id="secondthtd" class="team1">레스터 시티</td>
+					<td id="secondthtd" class="finaldraw">2 : 2</td>
+					<td id="secondthtd" class="team1">첼시</td>
+				</tr>
+
+				<tr>
+					<td id="secondthtd" class="tournament">PL</td>
+					<td id="secondthtd" class="team1">첼시</td>
+					<td id="secondthtd" class="finallose">0 : 2</td>
+					<td id="secondthtd" class="team1">맨체스터 유나이티드</td>
+				</tr>
+
+				<tr>
+					<td id="secondthtd" class="tournament">PL</td>
+					<td id="secondthtd" class="team1">첼시</td>
+					<td id="secondthtd" class="finalwin">2 : 1</td>
+					<td id="secondthtd" class="team1">토트넘</td>
+				</tr>
+					
+				<tr>
+					<td id="secondthtd" class="tournament">챔스</td>
+					<td id="secondthtd" class="team1">첼시</td>
+					<td id="secondthtd" class="finallose">0 : 3</td>
+					<td id="secondthtd" class="team1">바이에른 뮌헨</td>
+				</tr>
+
+				<tr>
+					<td id="secondthtd" class="tournament">PL</td>
+					<td id="secondthtd" class="team1">본머스</td>
+					<td id="secondthtd" class="finaldraw">2 : 2</td>
+					<td id="secondthtd" class="team1">첼시</td>
+				</tr>
+
+				<tr>
+					<td id="secondthtd" class="tournament">FA컵</td>
+					<td id="secondthtd" class="team1">첼시</td>
+					<td id="secondthtd" class="finalwin">2 : 0</td>
+					<td id="secondthtd" class="team1">리버풀</td>
+				</tr>
+
+				<tr>
+					<td id="secondthtd" class="tournament">PL</td>
+					<td id="secondthtd" class="team1">첼시</td>
+					<td id="secondthtd" class="finalwin">4 : 0</td>
+					<td id="secondthtd" class="team1">에버튼</td>
+				</tr>
+
+			</table>
+
+			<hr>
+
+			<div class="subtitle"><div id="bottom4"><a href="#top4">
+				# BEST 11
+			</div></div></a>
+
+			<div class="forward">
+				공격수
+			</div>
+
+			<img class="player1" src="타미_에이브러햄.png">
+			<img class="player2" src="메이슨_마운트.png">
+			<img class="player3" src="윌리안.png">
+		
+			<p></p>
+
+			<div style="display:inline" class="forwardplayername">9. 타미 에이브러햄</div>
+			<div style="display:inline" class="forwardplayername">19. 메이슨 마운트</div>
+			<div style="display:inline" class="forwardplayername">10. 윌리안</div>
+
+			<div class="midfielder">
+				미드필더
+			</div>
+
+			<img class="player4" src="마테오_코바치치.png">
+			<img class="player5" src="조르지뉴.png">
+			<img class="player6" src="은골로_캉테.png">
+		
+			<p></p>
+
+			<div style="display:inline" class="forwardplayername">17. 마테오 코바치치</div>
+			<div style="display:inline" class="forwardplayername">5. 조르지뉴</div>
+			<div style="display:inline" class="forwardplayername">7. 은골로 캉테</div>
+            
+            <p></p>
+
+            <div class="defender">
+				수비수
+			</div>
+
+			<img class="player7" src="아스필리쿠에타.png">
+            <img class="player8" src="안드레아스_크리스텐센.png">
+            <img class="player9" src="커트_조우마.png">
+
+			<p></p>
+
+			<div style="display:inline" class="forwardplayername">28. 아스필리쿠에타</div>
+			<div style="display:inline" class="forwardplayername">4. 크리스텐센</div>
+			<div style="display:inline" class="forwardplayername">15. 커트 조우마</div>
+
+            <p></p>
+
+            <img class="player10" src="피카요_토모리.png">
+
+            <p></p>
+
+            <div style="display:inline" class="forwardplayername">29. 피카요 토모리</div>
+
+			<div class="gk">
+				골키퍼
+			</div>
+
+			<img class="player11" src="케파_아리사발라가.png">
+
+			<p></p>
+
+			<div style="display:inline" class="forwardplayername">1. 케파 아리사발라가</div>
+
+			<hr>
+	</main>
+
+	<footer>
+
+	</footer>
+</body>
+</html>
+
